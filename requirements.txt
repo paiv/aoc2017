@@ -1,1 +1,4 @@
 -r code/requirements.txt
+PyYaml
+requests
+git+https://github.com/paiv/synasm.git
