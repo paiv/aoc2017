@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env pypy
+#              python3
 # import numpy as np
 # import re
 # from collections import defaultdict
@@ -39,8 +40,10 @@ def test():
 
 def getinput():
     import fileinput
-    with fileinput.input() as f:
-        return ''.join(f).strip()
+    f = fileinput.input()
+    text = ''.join(f).strip()
+    f.close()
+    return text
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ else
   VENV="python -m venv"
 fi
 
-$VENV -p python3 .virtualenv/aoc
+$VENV -p python3 .venv/aoc
 
 . activate
 
