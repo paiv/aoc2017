@@ -7,11 +7,9 @@ def solve(problem):
 
     pos = 0
     res = 0
-    a = 1
 
     for x in range(1, 50000001):
-        pos = (pos + n) % a + 1
-        a += 1
+        pos = (pos + n) % x + 1
         if pos == 1:
             res = x
 
