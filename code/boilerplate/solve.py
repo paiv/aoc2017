@@ -1,4 +1,5 @@
 #!/usr/bin/env pypy
+from __future__ import print_function
 #              python3
 # import numpy as np
 # import re
