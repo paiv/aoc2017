@@ -32,7 +32,7 @@ def solve(problem):
 
 def test():
     problem = """
-""".strip()
+""".strip('\n')
 
     # assert solve(problem) == 0
 
@@ -42,7 +42,7 @@ def test():
 def getinput():
     import fileinput
     f = fileinput.input()
-    text = ''.join(f).strip()
+    text = ''.join(f).strip('\n')
     f.close()
     return text
 
