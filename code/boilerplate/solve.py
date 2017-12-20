@@ -1,5 +1,5 @@
 #!/usr/bin/env pypy
-from __future__ import print_function
+from __future__ import division, print_function
 #              python3
 # import numpy as np
 # import re
