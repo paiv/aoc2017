@@ -1,29 +1,8 @@
-#!/usr/bin/env pypy
-from __future__ import division, print_function
-#              python3
-# import numpy as np
-# import re
+#!/usr/bin/env pypy3
 # from collections import defaultdict
 
 
 def solve(problem):
-    # a: 12345
-    # n = int(problem)
-
-    # a: 1 2 3 4 5
-    # a = [int(x) for x in problem.split()]
-
-    # a: 1 2 3
-    #    4 5 6
-    # a = [list(map(int, l.split())) for l in problem.splitlines()]
-
-    # rx = re.compile(r'^(.*?)$', re.M)
-    # a = rx.findall(problem)
-    # assert len(a) == len(problem.splitlines())
-
-    # a: xy op -4 zz rq ...
-    # a = [l.split() for l in problem.splitlines()]
-
 
     res = 0
     print(res)
