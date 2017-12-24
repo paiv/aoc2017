@@ -1,6 +1,18 @@
 #!/usr/bin/env pypy3
-from __future__ import division, print_function
 from collections import defaultdict
+from functools import reduce
+
+
+def dump(grid):
+    print()
+    minx = reduce(min, (k.real for k in grid.keys()))
+    maxx = reduce(max, (k.real for k in grid.keys()))
+    miny = reduce(min, (k.imag for k in grid.keys()))
+    maxy = reduce(max, (k.imag for k in grid.keys()))
+
+    s = '\n'.join(''.join(map('{:3}'.format, (grid[c+r*1j] for c in range(int(minx), int(maxx) + 1))))
+        for r in range(int(miny), int(maxy) + 1))
+    print(s)
 
 
 def solve(problem, n=10000):
@@ -8,28 +20,25 @@ def solve(problem, n=10000):
     w = len(a)
     h = w // 2
 
-    moves = [
-        1+0j, # right
-        0-1j, # up
-        -1+0j, # left
-        0+1j, # down
-    ]
+    moves = (
+        1,   # right
+        -1j, # up
+        -1,  # left
+        1j,  # down
+    )
 
-    sz = n
     grid = defaultdict(int)
-    pos = complex(sz,sz)
+    pos = 0j
     d = 1 # right, up, left, down
 
     for r in range(w):
         for c in range(w):
-            if a[r][c]:
-                grid[(sz-h+r, sz-h+c)] = 1
+            grid[complex(-h+c, -h+r)] = 1 if a[r][c] else 0
 
     res = 0
 
     for _ in range(n):
-        pp = (int(pos.imag), int(pos.real))
-        q = grid[pp]
+        q = grid[pos]
 
         x = -1 if q else 1
         d = (d + x) % 4
@@ -37,11 +46,12 @@ def solve(problem, n=10000):
         # clean, infected
         q = 1 - q
 
-        grid[pp] = q
+        grid[pos] = q
         pos += moves[d]
 
         res += q
 
+    # print(res)
     return res
 
 
