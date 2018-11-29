@@ -2,11 +2,7 @@
 
 
 def solve(t):
-    n = len(t)
-
-    res = sum(int(t[i]) if t[i] == t[(i + 1) % n] else 0 for i in range(0, len(t)))
-    # print(res)
-    return res
+    return sum((int(a) * (a == b)) for a,b in zip(t, t[1:] + t[:1]))
 
 
 def test():
