@@ -1,14 +1,7 @@
 #!/bin/bash
 set -e
 
-if hash virtualenv 2>/dev/null
-then
-  VENV="virtualenv"
-else
-  VENV="python -m venv"
-fi
-
-$VENV -p python3 .venv/aoc
+python3 -m venv .venv/aoc
 
 . activate
 

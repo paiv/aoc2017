@@ -2,3 +2,4 @@
 PyYaml
 requests
 git+https://github.com/paiv/synasm.git
+-e duet
